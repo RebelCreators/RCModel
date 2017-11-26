@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, RCLevel) {
 @property(nonatomic) NSString *tester;
 @property(nonatomic) RCLevel level;
 @property(nonatomic) NSDate *date;
+@property(nonatomic) NSData *data;
 @property(nonatomic) NSDictionary <NSString *, Test *> *inner;
 
 @end
@@ -64,9 +65,13 @@ typedef NS_ENUM(NSInteger, RCLevel) {
     Test *t = [Test fromJSONString:json error:&error];
     id oo = t.inner[@"123"];
     
+    t.data = [@"Test Data" dataUsingEncoding:NSUTF8StringEncoding];
     error = nil;
     NSString *json2 = [t toJSONString:&error];
     
+    error = nil;
+    Test *t2 = [Test fromJSONString:json2 error:&error];
+    NSString *dataString = [[NSString alloc] initWithData:t2.data encoding:NSUTF8StringEncoding];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
