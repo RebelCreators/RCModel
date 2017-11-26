@@ -1,0 +1,19 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RCModel' do
+  use_frameworks!
+
+  pod 'RCModel', :path => '../'
+
+  target 'RCModelTests' do
+    inherit! :search_paths
+      pod 'RCModel', :path => '../'
+  end
+
+  target 'RCModelUITests' do
+    inherit! :search_paths
+      pod 'RCModel', :path => '../'
+  end
+
+end

@@ -1,0 +1,6 @@
+framework module Pods_RCModel {
+  umbrella header "Pods-RCModel-umbrella.h"
+
+  export *
+  module * { export * }
+}

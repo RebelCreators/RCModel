@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:../src"
+      name = "src">
+      <FileRef
+         location = "group:RCModel.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSString+RCPropertyKey.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSArray+RCModelFactory.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCEnumMappable.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCOrPropertyKey.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCError.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCModelFactory.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSDictionary+RCModelFactory.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCCommonTransfromers.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCClassTransformers.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCTransformer.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCOrPropertyKey.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSArray+RCModelFactory.h">
+      </FileRef>
+      <FileRef
+         location = "group:NSString+RCPropertyKey.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCModel.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCModelFactory.m">
+      </FileRef>
+      <FileRef
+         location = "group:NSDictionary+RCModelFactory.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCError.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCCommonTransfromers.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCPropertyKey.h">
+      </FileRef>
+      <FileRef
+         location = "group:RCTransformer.m">
+      </FileRef>
+      <FileRef
+         location = "group:RCClassTransformers.h">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:RCModel.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

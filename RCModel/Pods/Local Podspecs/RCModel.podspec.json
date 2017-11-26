@@ -1,0 +1,24 @@
+{
+  "name": "RCModel",
+  "version": "1.0.0",
+  "license": {
+    "type": "Apache 2.0"
+  },
+  "summary": "An iOS SDK to parse models to and from JSON",
+  "homepage": "https://www.rebelcreators.com",
+  "authors": {
+    "Lorenzo Stanton": "lstanii@nmsu.edu"
+  },
+  "source": {
+    "git": "git@github.com:RebelCreators/RCModel.git",
+    "branch": "master"
+  },
+  "platforms": {
+    "ios": "9.0",
+    "osx": "10.12"
+  },
+  "requires_arc": true,
+  "source_files": "src/**/*.{h,m}",
+  "public_header_files": "src/**/*.h",
+  "frameworks": "Foundation"
+}

@@ -1,0 +1,6 @@
+framework module RCModel {
+  umbrella header "RCModel-umbrella.h"
+
+  export *
+  module * { export * }
+}
