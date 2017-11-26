@@ -334,6 +334,12 @@
                 }
             }
             
+            if ([(Class)clazz respondsToSelector:@selector(validateModel:)] && object) {
+                NSError *validationError;
+                [object validateModel: &validationError];
+                [RCError resolveError:validationError
+                          withPointer:error];
+            }
             return object;
         } reverseBlock:^id (id value, NSError **error) {
             if (value && ![value conformsToProtocol:@protocol(RCModel)]) {

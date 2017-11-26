@@ -38,6 +38,7 @@
 + (nonnull NSDictionary<NSString *, id<RCPropertyKey>> *)outputPropertyMappings;
 + (nonnull NSDictionary<NSString *, id<RCPropertyKey>> *)propertyMappings;
 + (nonnull NSDictionary<NSString *, NSValueTransformer *> *)transformersForProperties;
+- (BOOL)validateModel:(NSError * _Nullable * _Nullable)error;
 
 @end
 
