@@ -60,6 +60,9 @@
             if (!value) {
                 return nil;
             }
+            if ([value isKindOfClass:[NSDate class]]) {
+                return value;
+            }
             if (![value isKindOfClass:[NSString class]]) {
                 [RCError resolveError:[self errorWithCode:500 reason:@"Type not a string"] withPointer:error];
                 return nil;
@@ -88,6 +91,10 @@
             if (!value) {
                 return nil;
             }
+            if ([value isKindOfClass:[NSDate class]]) {
+                return value;
+            }
+            
             if (![value isKindOfClass:[NSNumber class]]) {
                 [RCError resolveError:[self errorWithCode:500 reason:@"Type not an NSNumber"] withPointer:error];
                 return nil;
@@ -107,6 +114,38 @@
     });
     return transformer;
 }
+
+
++ (nonnull NSValueTransformer<RCTransformer> *)base64StringTransformer {
+    static dispatch_once_t onceToken;
+    static RCTransformer *transformer;
+    dispatch_once(&onceToken, ^{
+        transformer = [[RCTransformer alloc] initWithForwardBlock:^id _Nullable(id  _Nullable value, NSError *__autoreleasing  _Nullable * _Nullable error) {
+            if (!value) {
+                return nil;
+            }
+            
+            if (![value isKindOfClass:[NSString class]]) {
+                [RCError resolveError:[self errorWithCode:500 reason:@"Type not a base64 encoded string"] withPointer:error];
+                return nil;
+            }
+            NSData *data = [[NSData alloc] initWithBase64EncodedString:value options:0];
+            return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        } reverseBlock:^id _Nullable(id  _Nullable value, NSError *__autoreleasing  _Nullable * _Nullable error) {
+            if (!value) {
+                return nil;
+            }
+            if (![value isKindOfClass:[NSString class]]) {
+                [RCError resolveError:[self errorWithCode:500 reason:@"Type not an NSString"] withPointer:error];
+                return nil;
+            }
+            NSData *data = [(NSString *)value dataUsingEncoding:NSUTF8StringEncoding];
+            return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        }];
+    });
+    return transformer;
+}
+
 
 + (NSError *)errorWithCode:(NSInteger)code reason:(NSString *)reason {
     return [NSError errorWithDomain:@"RCCommonTransformers" code:code userInfo:@{NSLocalizedDescriptionKey: NSLocalizedString(reason, reason)}];
