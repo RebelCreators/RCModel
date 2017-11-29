@@ -15,3 +15,7 @@ RCModel Changelog
 [1.0.3](https://github.com/RebelCreators/RCModel/tree/release-1.0.3)
  
  * NSCoding conformance
+ 
+[1.0.4](https://github.com/RebelCreators/RCModel/tree/release-1.0.4)
+ 
+ * Bug fixes for RCModel Factory
