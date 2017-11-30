@@ -69,7 +69,7 @@
         id value = [self valueForKey:property];
         if (value && [value conformsToProtocol:@protocol(NSCopying)]) {
             @try {
-                [self setValue:[value copy] forKey:property];
+                [copy setValue:[value copy] forKey:property];
             }
             @catch (NSException *exception) {
                 //nothing to do

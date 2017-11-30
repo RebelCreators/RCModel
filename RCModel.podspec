@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = 'RCModel'
-  s.version            =  '1.0.5'
+  s.version            =  '1.0.6'
   s.license            =  { :type => 'Apache 2.0' }
   s.summary            =  'An iOS SDK to parse models to and from JSON'
   s.homepage           =  'https://github.com/lstanii'
